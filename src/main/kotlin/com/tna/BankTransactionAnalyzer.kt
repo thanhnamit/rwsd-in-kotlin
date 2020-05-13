@@ -10,6 +10,7 @@ class BankTransactionAnalyzer() {
 
     fun analyze(file: String, parser: BankStatementParser) {
         val path = Paths.get(RESOURCE + file)
+        // inefficient readAllLines for more than 2GB file, should use File("file").forEachLine {}
         val processor = BankStatementProcessor(parser.parseLinesFrom(Files.readAllLines(path)))
         collectSummary(processor)
     }

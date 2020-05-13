@@ -1,6 +1,9 @@
 package com.tna
 
 import com.tna.domain.BankTransaction
+import com.tna.exception.CSVLineFormatException
+import com.tna.exception.CSVSyntaxException
+import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
@@ -26,5 +29,19 @@ class BankStatementCSVParserTest {
         """.trimIndent()
         val trans = parser.parseLinesFrom(lines.split("\n").toList())
         trans.shouldHaveSize(2)
+    }
+
+    @Test
+    fun `should throw CSV syntax exception`() {
+        shouldThrow<CSVSyntaxException> {
+            parser.parseFrom("300,44")
+        }
+    }
+
+    @Test
+    fun `should throw CSV line format exception`() {
+        shouldThrow<CSVLineFormatException> {
+            parser.parseFrom("300,49,434")
+        }
     }
 }

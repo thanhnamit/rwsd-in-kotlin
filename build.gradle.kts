@@ -1,5 +1,8 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
 plugins {
     kotlin("jvm") version "1.3.72"
+    id("org.jetbrains.dokka") version "0.10.1"
 }
 
 group = "com.tna"
@@ -31,5 +34,12 @@ tasks {
     }
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
+    }
+}
+
+tasks {
+    val dokka by getting(DokkaTask::class) {
+        outputFormat = "html"
+        outputDirectory = "$buildDir/dokka"
     }
 }

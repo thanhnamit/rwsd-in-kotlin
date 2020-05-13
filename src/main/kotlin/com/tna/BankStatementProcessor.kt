@@ -17,6 +17,10 @@ class BankStatementProcessor(val trans: List<BankTransaction>) {
         return trans.filter { it.description == category }.sumByDouble { it.amount }
     }
 
+    fun findTransactions(test: (BankTransaction) -> Boolean): List<BankTransaction> {
+        return trans.filter(test)
+    }
+
     fun findMaxInDateRange(from: LocalDate, to: LocalDate): Double {
         val tran = trans.filter { it.date >= from }.filter { it.date <= to }.maxBy { it.amount }
         return tran?.amount ?: throw Exception("No transaction found in provided range")
