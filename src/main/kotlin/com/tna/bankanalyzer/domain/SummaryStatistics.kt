@@ -1,4 +1,4 @@
-package com.tna.domain
+package com.tna.bankanalyzer.domain
 
 data class SummaryStatistics(
     val sum: Double,

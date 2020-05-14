@@ -1,7 +1,7 @@
-package com.tna
+package com.tna.bankanalyzer.exporter
 
-import com.tna.api.Exporter
-import com.tna.domain.SummaryStatistics
+import com.tna.bankanalyzer.api.Exporter
+import com.tna.bankanalyzer.domain.SummaryStatistics
 
 class HtmlExporter: Exporter {
     override fun export(summaryStatistics: SummaryStatistics): String {

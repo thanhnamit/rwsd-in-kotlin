@@ -1,5 +1,3 @@
-package com.tna.exception
-
-import java.lang.RuntimeException
+package com.tna.bankanalyzer.exception
 
 class CSVSyntaxException(override val message: String): RuntimeException(message)

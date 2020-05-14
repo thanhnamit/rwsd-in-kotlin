@@ -1,4 +1,4 @@
-package com.tna
+package com.tna.bankanalyzer
 
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
@@ -6,7 +6,8 @@ import java.time.LocalDate
 import java.time.Month
 
 class BankStatementProcessorTest {
-    private val parser: BankStatementCSVParser = BankStatementCSVParser()
+    private val parser: BankStatementCSVParser =
+        BankStatementCSVParser()
 
     @Test
     fun `should find max in date range`() {

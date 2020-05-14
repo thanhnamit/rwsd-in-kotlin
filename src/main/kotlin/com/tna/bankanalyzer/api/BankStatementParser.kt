@@ -1,6 +1,6 @@
-package com.tna.api
+package com.tna.bankanalyzer.api
 
-import com.tna.domain.BankTransaction
+import com.tna.bankanalyzer.domain.BankTransaction
 
 interface BankStatementParser {
     fun parseFrom(line: String): BankTransaction

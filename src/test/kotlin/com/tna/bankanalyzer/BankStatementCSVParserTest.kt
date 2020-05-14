@@ -1,8 +1,8 @@
-package com.tna
+package com.tna.bankanalyzer
 
-import com.tna.domain.BankTransaction
-import com.tna.exception.CSVLineFormatException
-import com.tna.exception.CSVSyntaxException
+import com.tna.bankanalyzer.domain.BankTransaction
+import com.tna.bankanalyzer.exception.CSVLineFormatException
+import com.tna.bankanalyzer.exception.CSVSyntaxException
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.shouldBe
@@ -11,13 +11,18 @@ import java.time.LocalDate
 import java.time.Month
 
 class BankStatementCSVParserTest {
-    private val parser: BankStatementCSVParser = BankStatementCSVParser()
+    private val parser: BankStatementCSVParser =
+        BankStatementCSVParser()
 
     @Test
     fun `should parse one correct line`() {
         val line = "30-01-2017,-50,Tesco"
         val trans = parser.parseFrom(line)
-        val expected = BankTransaction(LocalDate.of(2017, Month.JANUARY, 30), -50.0, "Tesco")
+        val expected = BankTransaction(
+            LocalDate.of(2017, Month.JANUARY, 30),
+            -50.0,
+            "Tesco"
+        )
         trans.shouldBe(expected)
     }
 

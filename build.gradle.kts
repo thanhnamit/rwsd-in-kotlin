@@ -9,11 +9,14 @@ group = "com.tna"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("com.beust:klaxon:5.2")
+    implementation("no.tornado:tornadofx:1.7.20")
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("io.mockk:mockk:1.10.0")
     testImplementation("io.kotest:kotest-runner-junit5-jvm:4.0.5") // for kotest framework

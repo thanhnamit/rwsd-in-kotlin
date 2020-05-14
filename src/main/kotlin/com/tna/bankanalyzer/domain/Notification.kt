@@ -1,4 +1,4 @@
-package com.tna.domain
+package com.tna.bankanalyzer.domain
 
 class Notification {
     private val errors = mutableListOf<String>()

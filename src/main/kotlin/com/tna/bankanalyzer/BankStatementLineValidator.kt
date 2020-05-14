@@ -1,6 +1,6 @@
-package com.tna
+package com.tna.bankanalyzer
 
-import com.tna.domain.Notification
+import com.tna.bankanalyzer.domain.Notification
 import java.time.LocalDate
 import java.time.format.DateTimeParseException
 
@@ -12,16 +12,16 @@ class BankStatementLineValidator(val date: String, val desc: String, val amount:
         }
 
         try {
-            val parsedDate = LocalDate.parse(date)
+            val parsedDate = LocalDate.parse(date, BankStatementCSVParser.dateTimeFormatter)
             if (parsedDate.isAfter(LocalDate.now())) {
                 notification.addError("Date can not be in the future")
             }
         } catch (e: DateTimeParseException) {
-            notification.addError("Invalid format for date")
+            notification.addError("Invalid format for date ${date}")
         }
 
         if (amount.toDoubleOrNull() == null) {
-            notification.addError("Invalid format for amount")
+            notification.addError("Invalid format for amount ${amount}")
         }
 
         return notification
