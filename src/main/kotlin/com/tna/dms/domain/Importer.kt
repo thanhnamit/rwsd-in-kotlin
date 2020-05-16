@@ -1,4 +1,4 @@
-package com.tna.dms.api
+package com.tna.dms.domain
 
 import com.tna.dms.domain.Document
 import java.io.File

@@ -1,6 +1,6 @@
 package com.tna.bankanalyzer
 
-import com.tna.bankanalyzer.api.BankStatementParser
+import com.tna.bankanalyzer.domain.BankStatementParser
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.time.Month

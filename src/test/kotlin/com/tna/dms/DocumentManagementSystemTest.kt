@@ -26,14 +26,14 @@ class DocumentManagementSystemTest {
     private val dms = DocumentManagementSystem()
 
     @Test
-    fun shouldImportFile() {
+    fun `should import file`() {
         dms.importFile(LETTER)
         val document = onlyDocument()
         assertAttributeEquals(document, Attributes.PATH, LETTER)
     }
 
     @Test
-    fun shouldImportLetterAttributes() {
+    fun `should import letter attributes`() {
         dms.importFile(LETTER)
         val document = onlyDocument()
         assertAttributeEquals(document, Attributes.PATIENT, JOE_BLOGGS)
@@ -49,13 +49,13 @@ class DocumentManagementSystemTest {
     }
 
     @Test
-    fun shouldImportReportAttributes() {
+    fun `should import report attributes`() {
         dms.importFile(REPORT)
         assertIsReport(onlyDocument())
     }
 
     @Test
-    fun shouldImportImageAttributes() {
+    fun `should import image attributes`() {
         dms.importFile(XRAY)
         val document = onlyDocument()
         assertAttributeEquals(document, Attributes.WIDTH, "320")
@@ -64,7 +64,7 @@ class DocumentManagementSystemTest {
     }
 
     @Test
-    fun shouldImportInvoiceAttributes() {
+    fun `should import invoice attributes`() {
         dms.importFile(INVOICE)
         val document = onlyDocument()
         assertAttributeEquals(document, Attributes.PATIENT, JOE_BLOGGS)
@@ -73,7 +73,7 @@ class DocumentManagementSystemTest {
     }
 
     @Test
-    fun shouldBeAbleToSearchFilesByAttributes() {
+    fun `should be able to search file by attributes`() {
         dms.importFile(LETTER)
         dms.importFile(REPORT)
         dms.importFile(XRAY)
@@ -83,14 +83,14 @@ class DocumentManagementSystemTest {
     }
 
     @Test
-    fun shouldNotImportMissingFile() {
+    fun `should not import missing file`() {
         shouldThrow<FileNotFoundException> {
             dms.importFile("gobbledygook.letter")
         }
     }
 
     @Test
-    fun shouldNotImportUnknownFile() {
+    fun `should not import unknown file`() {
         shouldThrow<UnknownFileTypeException> {
             dms.importFile(RESOURCES.toString() + "unknown.txt")
         }
@@ -122,6 +122,4 @@ class DocumentManagementSystemTest {
         documents.shouldHaveSize(1)
         return documents[0]
     }
-
-
 }

@@ -1,6 +1,6 @@
 package com.tna.dms
 
-import com.tna.dms.api.Importer
+import com.tna.dms.domain.Importer
 import com.tna.dms.domain.Attributes
 import com.tna.dms.domain.Document
 import com.tna.dms.domain.DocumentTypes

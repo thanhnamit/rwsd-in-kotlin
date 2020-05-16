@@ -1,6 +1,6 @@
 package com.tna.bankanalyzer
 
-import com.tna.bankanalyzer.api.BankStatementParser
+import com.tna.bankanalyzer.domain.BankStatementParser
 import com.tna.bankanalyzer.domain.BankTransaction
 import com.tna.bankanalyzer.exception.CSVLineFormatException
 import com.tna.bankanalyzer.exception.CSVSyntaxException
@@ -28,6 +28,7 @@ class BankStatementCSVParser : BankStatementParser {
             cols[2].trim(),
             cols[1].trim()
         ).validate()
+
         if (notification.hasErrors()) {
             throw CSVLineFormatException("Invalid data format: ${notification.errorMessage()}")
         }

@@ -1,4 +1,4 @@
-package com.tna.bankanalyzer.api
+package com.tna.bankanalyzer.domain
 
 import com.tna.bankanalyzer.domain.SummaryStatistics
 
