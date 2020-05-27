@@ -1,10 +1,6 @@
 package com.tna.dms
 
-import com.tna.dms.domain.Importer
-import com.tna.dms.domain.Attributes
-import com.tna.dms.domain.Document
-import com.tna.dms.domain.DocumentTypes
-import com.tna.dms.domain.TextFile
+import com.tna.dms.domain.*
 import java.io.File
 
 class ReportImporter : Importer {

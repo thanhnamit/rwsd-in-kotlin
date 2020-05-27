@@ -10,6 +10,10 @@ class BusinessRuleEngine(val facts: Facts) {
         actions.add(action)
     }
 
+    fun replaceActions(actions: MutableList<Action>) {
+        this.actions = actions
+    }
+
     fun count(): Int {
         return actions.size
     }

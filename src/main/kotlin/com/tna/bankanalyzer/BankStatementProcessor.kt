@@ -46,9 +46,9 @@ class BankStatementProcessor(val trans: List<BankTransaction>) {
     }
 
     fun getHistogramGroupByMonthAndDesc(): List<BankTransaction> {
-        return trans.groupBy { it.date.month }.mapValues { it ->
-            it.value.groupBy { trans -> trans.description }.values.flatten()
-        }.values.flatten()
+        return trans.groupBy { it.date.month }
+                    .mapValues { it.value.groupBy { t -> t.description }.values.flatten() }
+                    .values.flatten()
     }
 
     fun getAllTransactions(): List<BankTransaction> {

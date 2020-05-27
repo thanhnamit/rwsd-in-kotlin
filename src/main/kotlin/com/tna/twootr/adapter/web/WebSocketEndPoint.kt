@@ -1,8 +1,6 @@
 package com.tna.twootr.adapter.web
 
 import com.beust.klaxon.JsonObject
-import com.beust.klaxon.JsonReader
-import com.beust.klaxon.Klaxon
 import com.beust.klaxon.Parser
 import com.tna.twootr.core.*
 import org.java_websocket.WebSocket

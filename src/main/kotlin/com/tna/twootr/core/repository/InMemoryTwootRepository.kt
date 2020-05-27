@@ -1,6 +1,9 @@
 package com.tna.twootr.core.repository
 
-import com.tna.twootr.core.*
+import com.tna.twootr.core.Position
+import com.tna.twootr.core.Twoot
+import com.tna.twootr.core.TwootQuery
+import com.tna.twootr.core.TwootRepository
 
 class InMemoryTwootRepository: TwootRepository {
     private var twoots = mutableListOf<Twoot>()

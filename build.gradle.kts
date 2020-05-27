@@ -21,6 +21,7 @@ dependencies {
     implementation("org.java-websocket:Java-WebSocket:1.3.0")
     implementation("org.eclipse.jetty:jetty-server:9.4.28.v20200408")
     implementation("org.eclipse.jetty:jetty-servlet:9.4.28.v20200408")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("io.mockk:mockk:1.10.0")
     testImplementation("io.kotest:kotest-runner-junit5-jvm:4.0.5") // for kotest framework

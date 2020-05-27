@@ -1,9 +1,9 @@
 package com.tna.dms
 
-import com.tna.dms.domain.Importer
 import com.tna.dms.domain.Attributes
 import com.tna.dms.domain.Document
 import com.tna.dms.domain.DocumentTypes
+import com.tna.dms.domain.Importer
 import java.io.File
 import javax.imageio.ImageIO
 
