@@ -8,7 +8,7 @@ import java.net.URL
 class CovidStatusClient: CovidStatusApi {
     private val statusUrl = "https://api.covid19api.com/total/country/"
 
-    override suspend fun getTotalByCountrySlug(code: String): CountryCovidStatus? {
+    override fun getTotalByCountrySlug(code: String): CountryCovidStatus? {
         return Klaxon().parseArray<CountryCovidStatus>(URL(statusUrl + code).readText())?.lastOrNull()
     }
 }
